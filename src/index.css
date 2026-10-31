@@ -1018,7 +1018,15 @@ a {
         grid-template-columns:1fr
     }
     .auth-art {
-        display:none
+    display: block;
+    text-align: center;
+    }
+    .mascot {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto;
     }
     .hero-art {
         max-width:25%
@@ -1027,65 +1035,131 @@ a {
         grid-template-columns:1fr
     }
     .play-side-art {
-        display:none
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .play-art {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
     }
 }
-@media(max-width:600px) {
+@media (max-width: 600px) {
     .create-info-grid {
-        grid-template-columns:1fr
+        grid-template-columns: 1fr;
     }
+
     .q-head {
-        align-items:flex-start;
-        flex-direction:column
+        align-items: flex-start;
+        flex-direction: column;
     }
+
     .question-box {
-        padding:16px
+        padding: 16px;
     }
+
     .topbar {
-        padding:0 13px
+        padding: 0 13px;
     }
+
     .brand-title {
-        font-size:1.05rem
+        font-size: 1.05rem;
     }
+
     .user-chip span {
-        display:none
+        display: none;
     }
+
     .sidebar {
-        grid-template-columns:1fr
+        grid-template-columns: 1fr;
     }
+
     .role-grid {
-        grid-template-columns:1fr
+        grid-template-columns: 1fr;
     }
+
     .main {
-        padding:13px
+        padding: 13px;
     }
+
     .hero {
-        padding:18px
+        padding: 18px;
     }
+
     .hero-art {
-    display:block;
-    width:80px;
-    max-width:25%;
-    height:auto;
-    flex-shrink:0;
+        display: block;
+        width: 80px;
+        max-width: 25%;
+        height: auto;
+        flex-shrink: 0;
     }
-    }
+
     .page-head {
-        display:block
+        display: block;
     }
+
     .page-head .btn {
-        margin-top:12px
+        margin-top: 12px;
     }
+
     .quick {
-        grid-template-columns:1fr
+        grid-template-columns: 1fr;
     }
+
     .option-row {
-        grid-template-columns:30px minmax(0,1fr)
+        grid-template-columns: 30px minmax(0, 1fr);
     }
+
     .play-actions {
-        flex-direction:column
+        flex-direction: column;
     }
+
     .score {
-        font-size:3rem
+        font-size: 3rem;
+    }
+
+    .auth {
+        padding: 16px;
+    }
+
+    .auth-wrap {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .auth-art {
+        display: block;
+    }
+
+    .auth-card {
+        padding: 20px;
+    }
+
+    .mascot {
+        max-width: 160px;
+    }
+
+    .play-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .play-side-art {
+        display: flex;
+    }
+
+    .play-art {
+        max-width: 100px;
+    }
+
+    .question-image,
+    .play-question-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
+
