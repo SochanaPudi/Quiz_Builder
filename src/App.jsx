@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { QBStorage } from './services/storage';
 import Login from './pages/Authentication/Login.jsx';
 import Signup from './pages/Authentication/Signup.jsx';
@@ -36,31 +37,34 @@ function AdminRoute({ children }) {
 
 export default function App() {
   return (
-    <Routes>
-      {/* The original index.html redirected to the signup page. */}
-      <Route path="/" element={<Navigate to="/signup" replace />} />
+    <>
+      <Routes>
+        {/* The original index.html redirected to the signup page. */}
+        <Route path="/" element={<Navigate to="/signup" replace />} />
 
-      {/* Authentication module */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/role" element={<Role />} />
+        {/* Authentication module */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/role" element={<Role />} />
 
-      {/* Admin (Creator) module */}
-      <Route path="/admin/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} />
-      <Route path="/admin/create" element={<AdminRoute><CreateQuiz /></AdminRoute>} />
-      <Route path="/admin/quizzes" element={<AdminRoute><Quizzes /></AdminRoute>} />
-      <Route path="/admin/results" element={<AdminRoute><Results /></AdminRoute>} />
-      <Route path="/admin/profile" element={<AdminRoute><Profile /></AdminRoute>} />
+        {/* Admin (Creator) module */}
+        <Route path="/admin/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} />
+        <Route path="/admin/create" element={<AdminRoute><CreateQuiz /></AdminRoute>} />
+        <Route path="/admin/quizzes" element={<AdminRoute><Quizzes /></AdminRoute>} />
+        <Route path="/admin/results" element={<AdminRoute><Results /></AdminRoute>} />
+        <Route path="/admin/profile" element={<AdminRoute><Profile /></AdminRoute>} />
 
-      {/* User (Participant) module */}
-      <Route path="/user/join" element={<Join />} />
-      <Route path="/user/play" element={<Play />} />
-      <Route path="/user/result" element={<Result />} />
+        {/* User (Participant) module */}
+        <Route path="/user/join" element={<Join />} />
+        <Route path="/user/play" element={<Play />} />
+        <Route path="/user/result" element={<Result />} />
 
-      {/* Demo data seeder (converted from the original test-seed.html) */}
-      <Route path="/test-seed" element={<TestSeed />} />
+        {/* Demo data seeder (converted from the original test-seed.html) */}
+        <Route path="/test-seed" element={<TestSeed />} />
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Analytics />
+    </>
   );
 }
